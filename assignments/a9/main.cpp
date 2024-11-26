@@ -112,7 +112,7 @@ public:
         
         //// Background Option (3): Sky box
         //// Here we provide a default implementation of a sky box; customize it for your own sky box
-        /*
+        
         {
             // from https://www.humus.name/index.php?page=Textures
             const std::vector<std::string> cubemap_files{
@@ -129,7 +129,7 @@ public:
             skybox->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("skybox"));
             skybox->Initialize();
         }
-        */
+        
 
         //// Background Option (4): Sky sphere
         //// Here we provide a default implementation of a textured sphere; customize it for your own sky sphere
@@ -193,17 +193,17 @@ public:
 
             //// set object's transform
             Matrix4f r, s, t;
-            r << 1, 0, 0, 0,
-                0, 0.5, 0.67, 0,
-                0, -0.67, 0.5, 0,
+            r << 1.0, 0.0, 0, 0,
+                0.0, 0.0, -1.0, 0,
+                0, 1.0, 0.0, 0,
                 0, 0, 0, 1;
-            s << 0.5, 0, 0, 0,
-                0, 0.5, 0, 0,
-                0, 0, 0.5, 0,
+            s << 10.0, 0, 0, 0,
+                0, 10.0, 0, 0,
+                0, 0, 10.0, 0,
                 0, 0, 0, 1;
-            t << 1, 0, 0, -2,
-                 0, 1, 0, 0.5,
-                 0, 0, 1, 0,
+            t << 1, 0, 0, -5,
+                 0, 1, 0, -3.0,
+                 0, 0, 1, -5.0,
                  0, 0, 0, 1,
             terrain->Set_Model_Matrix(t * s * r);
 
