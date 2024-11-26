@@ -68,7 +68,6 @@ public:
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/earth_normal.png", "sphere_normal");
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/bunny_color.jpg", "bunny_color");
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/bunny_normal.png", "bunny_normal");
-        OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/Scaniverse.png", "deer_color");
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/window.png", "window_color");
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/buzz_color.png", "buzz_color");
         OpenGLTextureLibrary::Instance()->Add_Texture_From_File("tex/star.png", "star_color");
@@ -162,7 +161,7 @@ public:
         //// Here we load a bunny object with the basic shader to show how to add an object into the scene
         {
             //// create object by reading an obj mesh
-            auto bunny = Add_Obj_Mesh_Object("obj/Scaniverse.obj");
+            auto bunny = Add_Obj_Mesh_Object("obj/bunny.obj");
 
             //// set object's transform
             Matrix4f t;
@@ -179,8 +178,8 @@ public:
             bunny->Set_Shininess(128);
 
             //// bind texture to object
-            bunny->Add_Texture("tex_color", OpenGLTextureLibrary::Get_Texture("deer_color"));
-            //bunny->Add_Texture("tex_normal", OpenGLTextureLibrary::Get_Texture("Scaniverse"));
+            bunny->Add_Texture("tex_color", OpenGLTextureLibrary::Get_Texture("bunny_color"));
+            bunny->Add_Texture("tex_normal", OpenGLTextureLibrary::Get_Texture("bunny_normal"));
 
             //// bind shader to object
             bunny->Add_Shader_Program(OpenGLShaderLibrary::Get_Shader("basic"));
